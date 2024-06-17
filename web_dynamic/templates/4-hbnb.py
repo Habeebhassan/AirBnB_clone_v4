@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?cache_id={{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?cache_id={{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?cache_id={{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css?cache_id={{ cache_id }}">
+    <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?cache_id={{ cache_id }}">
+    <link rel="icon" href="../static/images/icon.png?cache_id={{ cache_id }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../static/scripts/4-hbnb.js?cache_id={{ cache_id }}"></script>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>HBNB</h1>
+        </div>
+        <div id="api_status" style="float: right; width: 40px; height: 40px; margin-right: 30px; background-color: #cccccc; border-radius: 50%;"></div>
+    </header>
+    <div class="filters">
+        <h4>Amenities</h4>
+        <ul>
+            {% for amenity in amenities %}
+            <li>
+                <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}" style="margin-left: 10px;">
+                {{ amenity.name }}
+            </li>
+            {% endfor %}
+        </ul>
+        <button id="search_button">Search</button>
+    </div>
+    <section class="places">
+        <!-- Places will be dynamically added here by JavaScript -->
+    </section>
+    <!-- Other content -->
+</body>
+</html>
